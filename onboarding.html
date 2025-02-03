@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mycelium Matchmaker - Onboarding</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <!-- HEADER -->
+  <header class="bg-white border-b border-gray-200">
+    <div class="max-w-3xl mx-auto px-4 py-4">
+      <h1 class="text-2xl font-bold text-blue-700">🚀 Mycelium Matchmaker</h1>
+      <p class="text-gray-600 text-sm">✨ Create your account & personalize your digital identity</p>
+    </div>
+  </header>
+
+  <!-- PROGRESS BAR (optional) -->
+  <div class="max-w-3xl mx-auto w-full px-4 pt-6">
+    <div class="flex items-center justify-between">
+      <div class="flex-1 bg-gray-300 h-2 rounded mr-2">
+        <div id="progressBar" class="bg-blue-500 h-2 w-1/5 rounded"></div>
+      </div>
+      <span id="progressLabel" class="text-sm text-gray-700">Step 1 of 5</span>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow">
+    <div class="max-w-3xl mx-auto px-4 py-8">
+      <!-- STEP 1: WELCOME -->
+      <section id="step-1" class="step active">
+        <h2 class="text-xl font-semibold text-blue-600 mb-4">👋 Welcome to Mycelium Matchmaker!</h2>
+        <p class="text-gray-700 mb-4">
+          Ready to create a unified, privacy-first digital identity? 
+          We'll guide you through a short setup process.
+        </p>
+        <p class="text-gray-700 mb-6">
+          In just a few steps, you'll choose your initial interests, 
+          control privacy settings, and create your profile.
+        </p>
+        <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                onclick="nextStep()">
+          Get Started
+        </button>
+      </section>
+
+      <!-- STEP 2: ACCOUNT SETUP -->
+      <section id="step-2" class="step hidden">
+        <h2 class="text-xl font-semibold text-blue-600 mb-4">👤 Create Your Account</h2>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-gray-700 mb-1" for="fullName">Full Name</label>
+            <input id="fullName" type="text" 
+                   class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                   placeholder="Rachel Summers" />
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-1" for="email">Email</label>
+            <input id="email" type="email"
+                   class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                   placeholder="rachel@example.com" />
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-1" for="password">Password</label>
+            <input id="password" type="password"
+                   class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                   placeholder="********" />
+          </div>
+        </form>
+        <div class="mt-6 flex justify-between">
+          <button class="px-4 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-50"
+                  onclick="prevStep()">
+            Back
+          </button>
+          <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                  onclick="nextStep()">
+            Continue
+          </button>
+        </div>
+      </section>
+
+      <!-- STEP 3: INITIAL PREFERENCES -->
+      <section id="step-3" class="step hidden">
+        <h2 class="text-xl font-semibold text-blue-600 mb-4">🎯 Choose Your Interests</h2>
+        <p class="text-gray-700 mb-4">Select a few topics that matter to you. We'll personalize suggestions accordingly.</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+          <!-- Interest Option -->
+          <label class="bg-white border border-gray-300 rounded p-3 flex items-center space-x-2 hover:bg-gray-50 cursor-pointer">
+            <input type="checkbox" class="focus:ring-blue-500 h-5 w-5 text-blue-600" />
+            <span class="text-gray-700">Tech Startups</span>
+          </label>
+          <label class="bg-white border border-gray-300 rounded p-3 flex items-center space-x-2 hover:bg-gray-50 cursor-pointer">
+            <input type="checkbox" class="focus:ring-blue-500 h-5 w-5 text-blue-600" />
+            <span class="text-gray-700">Eco-Travel</span>
+          </label>
+          <label class="bg-white border border-gray-300 rounded p-3 flex items-center space-x-2 hover:bg-gray-50 cursor-pointer">
+            <input type="checkbox" class="focus:ring-blue-500 h-5 w-5 text-blue-600" />
+            <span class="text-gray-700">Vegan Cooking</span>
+          </label>
+          <label class="bg-white border border-gray-300 rounded p-3 flex items-center space-x-2 hover:bg-gray-50 cursor-pointer">
+            <input type="checkbox" class="focus:ring-blue-500 h-5 w-5 text-blue-600" />
+            <span class="text-gray-700">Health & Fitness</span>
+          </label>
+          <label class="bg-white border border-gray-300 rounded p-3 flex items-center space-x-2 hover:bg-gray-50 cursor-pointer">
+            <input type="checkbox" class="focus:ring-blue-500 h-5 w-5 text-blue-600" />
+            <span class="text-gray-700">Crypto & Finance</span>
+          </label>
+          <label class="bg-white border border-gray-300 rounded p-3 flex items-center space-x-2 hover:bg-gray-50 cursor-pointer">
+            <input type="checkbox" class="focus:ring-blue-500 h-5 w-5 text-blue-600" />
+            <span class="text-gray-700">Art & Design</span>
+          </label>
+          <!-- Add more interests as needed -->
+        </div>
+        <div class="mt-6 flex justify-between">
+          <button class="px-4 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-50"
+                  onclick="prevStep()">
+            Back
+          </button>
+          <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                  onclick="nextStep()">
+            Continue
+          </button>
+        </div>
+      </section>
+
+      <!-- STEP 4: PRIVACY & CONSENT -->
+      <section id="step-4" class="step hidden">
+        <h2 class="text-xl font-semibold text-blue-600 mb-4">🔒 Privacy & Consent</h2>
+        <p class="text-gray-700 mb-4">
+          We prioritize your privacy. Below you can decide which data to share with Matchmaker.
+          All data is encrypted and remains under your control.
+        </p>
+        <div class="space-y-4">
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" class="focus:ring-blue-500 h-5 w-5 text-blue-600" checked />
+            <span class="text-gray-700">Allow AI to personalize my content based on my browsing patterns.</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" class="focus:ring-blue-500 h-5 w-5 text-blue-600" />
+            <span class="text-gray-700">Share approximate location for local events and recommendations.</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" class="focus:ring-blue-500 h-5 w-5 text-blue-600" />
+            <span class="text-gray-700">Enable MDIC (Matchmaker Digital Identity Coin) economy tracking & usage.</span>
+          </label>
+        </div>
+        <div class="mt-6 flex justify-between">
+          <button class="px-4 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-50"
+                  onclick="prevStep()">
+            Back
+          </button>
+          <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                  onclick="nextStep()">
+            Continue
+          </button>
+        </div>
+      </section>
+
+      <!-- STEP 5: COMPLETION -->
+      <section id="step-5" class="step hidden">
+        <h2 class="text-xl font-semibold text-blue-600 mb-4">🎉 Setup Complete!</h2>
+        <p class="text-gray-700 mb-6">
+          Congratulations, your account has been created successfully. 
+          You can now start exploring personalized content, earn or spend MDIC, 
+          and fine-tune your DIU preferences at any time.
+        </p>
+        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+          <button class="px-4 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-50"
+                  onclick="prevStep()">
+            Back
+          </button>
+          <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                  onclick="finishSetup()">
+            Go to My Dashboard
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-gray-200">
+    <div class="max-w-3xl mx-auto px-4 py-4 text-center">
+      <p class="text-sm text-gray-500">&copy; 2025 Mycelium Matchmaker. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Minimal JS for Step Navigation -->
+  <script>
+    let currentStep = 1;
+    const totalSteps = 5;
+
+    // Move to the next step
+    function nextStep() {
+      if (currentStep < totalSteps) {
+        document.getElementById(`step-${currentStep}`).classList.add("hidden");
+        document.getElementById(`step-${currentStep}`).classList.remove("active");
+        currentStep++;
+        document.getElementById(`step-${currentStep}`).classList.remove("hidden");
+        document.getElementById(`step-${currentStep}`).classList.add("active");
+      }
+      updateProgress();
+    }
+
+    // Move to the previous step
+    function prevStep() {
+      if (currentStep > 1) {
+        document.getElementById(`step-${currentStep}`).classList.add("hidden");
+        document.getElementById(`step-${currentStep}`).classList.remove("active");
+        currentStep--;
+        document.getElementById(`step-${currentStep}`).classList.remove("hidden");
+        document.getElementById(`step-${currentStep}`).classList.add("active");
+      }
+      updateProgress();
+    }
+
+    // Finish Setup (for demonstration)
+    function finishSetup() {
+      alert("Redirecting to your personalized Matchmaker Dashboard...");
+      // Here you can redirect: window.location.href = "/dashboard.html";
+    }
+
+    // Update progress bar & label
+    function updateProgress() {
+      const progressBar = document.getElementById("progressBar");
+      const progressLabel = document.getElementById("progressLabel");
+      const percentage = (currentStep / totalSteps) * 100;
+      progressBar.style.width = `${percentage}%`;
+      progressLabel.textContent = `Step ${currentStep} of ${totalSteps}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>מייסליום מאצ'מייקר — ממשק משתמש רב-פלטפורמה של רייצ'ל</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* Basic Reset & Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0a6fa5;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.5rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    nav a {
+      color: #0a6fa5;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem;
+    }
+
+    nav a:hover {
+      background: #e1f5fe;
+      border-radius: 5px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    section {
+      background: #ffffff;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      color: #0a6fa5;
+      font-size: 1.3rem;
+    }
+
+    /* Utility classes */
+    .card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight {
+      color: #ffc107;
+      font-weight: bold;
+    }
+
+    /* Responsive grid example */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background: #fff;
+      border-top: 1px solid #eee;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>🌐 מייסליום מאצ'מייקר</h1>
+    <p>👩‍💻 ממשק משתמש רב-פלטפורמה של רייצ'ל</p>
+  </header>
+
+  <!-- NAVIGATION (optional) -->
+  <nav>
+    <a href="#dashboard">📊 לוח בקרה</a>
+    <a href="#amazon">🛍️ אמזון</a>
+    <a href="#spotify">🎵 ספוטיפיי</a>
+    <a href="#vr">🎮 VR</a>
+    <a href="#privacy">🔒 פרטיות</a>
+  </nav>
+
+  <main>
+    <!-- 1. DASHBOARD SECTION -->
+    <section id="dashboard">
+      <h2>1. לוח בקרה של מאצ'מייקר</h2>
+      <div class="card">
+        <h3>ברוכה הבאה, רייצ'ל!</h3>
+        <p>להלן סקירה קצרה של <strong>יחידת זהות דיגיטלית (DIU)</strong> שלך ושל ה<strong>יתרה ב-MDIC</strong>.</p>
+      </div>
+
+      <div class="grid">
+        <!-- DIU PROFILE CARD -->
+        <div class="card">
+          <h3>הפרופיל שלי ב-DIU</h3>
+          <p>תחומי עניין מובילים: <em>בישול טבעוני, טיולים אקולוגיים, סטארטאפים טכנולוגיים</em></p>
+          <p>ציון ביטחון AI: <strong>85%</strong></p>
+        </div>
+
+        <!-- MDIC BALANCE CARD -->
+        <div class="card">
+          <h3>יתרת MDIC</h3>
+          <p class="highlight">200 MDIC</p>
+          <button>קנה/תרוויח עוד MDIC</button>
+        </div>
+
+        <!-- CONNECTED PLATFORMS -->
+        <div class="card">
+          <h3>פלטפורמות מחוברות</h3>
+          <ul>
+            <li>אמזון <span>(מחובר)</span></li>
+            <li>ספוטיפיי <span>(מחובר)</span></li>
+            <li>עולם VR <span>(ממתין)</span></li>
+          </ul>
+        </div>
+
+        <!-- QUICK RECOMMENDATIONS FEED -->
+        <div class="card">
+          <h3>המלצות מהירות</h3>
+          <ul>
+            <li>מאמר: "10 היעדים האקולוגיים המובילים"</li>
+            <li>מוצר: "תיק גב מבד ממוחזר"</li>
+            <li>מוזיקה: "קצבי Lo-Fi למפגשי עבודה"</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. AMAZON INTEGRATION SECTION -->
+    <section id="amazon">
+      <h2>2. אינטגרציה עם אמזון</h2>
+      <p>
+        רשימות מוצרים מותאמות אישית וידידותיות לסביבה, המותאמות להעדפות <em>טבעוניות</em> ו<em>אקולוגיות</em> של רייצ'ל.
+      </p>
+
+      <!-- Banner / Headline -->
+      <div class="card">
+        <h3>מוצרים אקולוגיים במיוחד בשבילך, רייצ'ל!</h3>
+        <p>חסוך עוד עם אסימוני ה<strong>MDIC</strong> שלך.</p>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="grid">
+        <!-- Example Product Card -->
+        <div class="card">
+          <h4>בקבוק מים בר-קיימא</h4>
+          <p>$19.99 או <span class="highlight">5 MDIC</span></p>
+          <button>הוסף לעגלה</button>
+        </div>
+        <div class="card">
+          <h4>תיק קנבס אורגני</h4>
+          <p>$12.99 או <span class="highlight">3 MDIC</span></p>
+          <button>הוסף לעגלה</button>
+        </div>
+        <div class="card">
+          <h4>מטען סולארי</h4>
+          <p>$29.99 או <span class="highlight">7 MDIC</span></p>
+          <button>הוסף לעגלה</button>
+        </div>
+      </div>
+      <!-- End Product Grid -->
+    </section>
+
+    <!-- 3. SPOTIFY INTEGRATION SECTION -->
+    <section id="spotify">
+      <h2>3. אינטגרציה עם ספוטיפיי</h2>
+      <p>
+        המלצות מוזיקה המבוססות על AI, לפי מצב הרוח, הרגלי הגלישה והעדפות אקולוגיות של רייצ'ל.
+      </p>
+
+      <div class="card">
+        <h3>תמהיל יומי עבור רייצ'ל</h3>
+        <p>פלייליסטים מומלצים:</p>
+        <ul>
+          <li>בישול טבעוני (אינסטרומנטלי)</li>
+          <li>תמהיל לטיולים אקולוגיים</li>
+          <li>קצבי Lo-Fi למפגשי ריכוז</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>למה אני רואה את זה?</h3>
+        <p>
+          בהתבסס על העדפתך למוזיקה <em>מרגיעה ואינסטרומנטלית</em> לאחר 22:00 ועל <em>חיפושי הטיולים האחרונים</em> שלך.
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. VR ENVIRONMENT ONBOARDING -->
+    <section id="vr">
+      <h2>4. היכרות עם סביבה VR</h2>
+      <p>
+        מאצ'מייקר משתלב עם מרכז חברתי ב-VR, ומאפשר לרייצ'ל לבחור כמה מהנתונים מ-DIU שלה היא רוצה לשתף לחווייה סוחפת.
+      </p>
+
+      <div class="card">
+        <h3>תצוגה מקדימה של אווטאר</h3>
+        <p>האוואטר ב-VR של רייצ'ל (הצעות ללבוש בהתאם לסגנון האישי שלה).</p>
+        <button>התאם את האווטאר</button>
+      </div>
+
+      <!-- Interests to Share -->
+      <div class="card">
+        <h3>בחר תחומי עניין לשיתוף</h3>
+        <ul>
+          <li><input type="checkbox" checked /> טיולים אקולוגיים ושימור</li>
+          <li><input type="checkbox" checked /> מטבח טבעוני</li>
+          <li><input type="checkbox" /> מדע בדיוני ופנטזיה</li>
+          <li><input type="checkbox" /> סטארטאפים טכנולוגיים</li>
+        </ul>
+        <button>אשר והיכנס לעולם ה-VR</button>
+      </div>
+    </section>
+
+    <!-- 5. PRIVACY & DATA CONTROL -->
+    <section id="privacy">
+      <h2>5. פרטיות ובקרת נתונים</h2>
+      <p>נהל אילו פלטפורמות מקבלות גישה לנתוניך ואיך יחידת הזהות הדיגיטלית (DIU) שלך מתעדכנת.</p>
+
+      <!-- Platforms & Toggles -->
+      <div class="card">
+        <h3>פלטפורמות</h3>
+        <ul>
+          <li><strong>אמזון</strong> - שיתוף: תחומי עניין קניות, העדפות אקולוגיות 
+            <button>בטל גישה</button></li>
+          <li><strong>ספוטיפיי</strong> - שיתוף: נתונים מבוססי מצב רוח 
+            <button>בטל גישה</button></li>
+          <li><strong>עולם VR</strong> - שיתוף: תחומי עניין מאושרים 
+            <button>בטל גישה</button></li>
+        </ul>
+      </div>
+
+      <!-- Consent Log -->
+      <div class="card">
+        <h3>יומן הסכמות</h3>
+        <ul>
+          <li>היום 9:15 - ספוטיפיי ניגש להעדפת "מוזיקת ריכוז"</li>
+          <li>היום 11:00 - אמזון השתמש במסנן "טבעוני"</li>
+          <li>אתמול 7:30 - עולם VR בדק את העדפת "טיולים"</li>
+        </ul>
+      </div>
+
+      <!-- Anonymize / Reset -->
+      <div class="card">
+        <h3>הפוך את הפרופיל לאנונימי או אפס אותו</h3>
+        <p>בצע איפוס מלא להסרת כל הנתונים המותאמים אישית. פעולה זו בלתי הפיכה.</p>
+        <button>אפס / הפוך לאנונימי</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Mycelium Matchmaker. כל הזכויות שמורות.</p>
+  </footer>
+
+</body>
+</html>
