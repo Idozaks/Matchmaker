@@ -25,6 +25,7 @@
       text-align: center;
       padding: 1rem;
       margin-bottom: 1.5rem;
+      animation: fadeInRTL 0.8s ease-out;
     }
 
     header h1 {
@@ -45,11 +46,12 @@
       text-decoration: none;
       font-weight: 600;
       padding: 0.5rem;
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
+      transform: translateX(-2px);
       background: #e1f5fe;
-      border-radius: 5px;
     }
 
     main {
@@ -79,6 +81,8 @@
       border-radius: 5px;
       padding: 1rem;
       margin-bottom: 1rem;
+      animation: fadeInRTL 0.6s ease-out;
+      transition: all 0.3s ease;
     }
 
     .card h3 {
@@ -104,6 +108,26 @@
       background: #fff;
       border-top: 1px solid #eee;
       margin-top: 1rem;
+    }
+
+    /* Add animations */
+    @keyframes fadeInRTL {
+      from { transform: translateX(20px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .card:hover {
+      transform: translateX(-2px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    button {
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
   </style>
 </head>
