@@ -17,10 +17,8 @@
   <!-- NAVIGATION -->
   <nav class="bg-white flex justify-center gap-6 p-4 border-b border-gray-200 text-lg">
     <a href="#dashboard" class="text-blue-600 font-semibold px-3 py-2 hover:bg-blue-100 rounded transition-all duration-300 hover:-translate-y-1">📊 לוח בקרה</a>
-    <a href="#amazon" class="text-blue-600 font-semibold px-3 py-2 hover:bg-blue-100 rounded">🛍️ אמזון</a>
-    <a href="#spotify" class="text-blue-600 font-semibold px-3 py-2 hover:bg-blue-100 rounded">🎵 ספוטיפיי</a>
-    <a href="#vr" class="text-blue-600 font-semibold px-3 py-2 hover:bg-blue-100 rounded">🕶️ VR</a>
-    <a href="#privacy" class="text-blue-600 font-semibold px-3 py-2 hover:bg-blue-100 rounded">🔐 פרטיות</a>
+    <a href="#profile" class="text-blue-600 font-semibold px-3 py-2 hover:bg-blue-100 rounded">👤 הפרופיל שלי</a>
+    <a href="#connections" class="text-blue-600 font-semibold px-3 py-2 hover:bg-blue-100 rounded">🔗 חיבורים חיצוניים</a>
   </nav>
 
   <main class="max-w-5xl mx-auto p-6">
@@ -30,10 +28,10 @@
       <h2 class="text-2xl text-blue-600 mb-4">📊 לוח בקרה</h2>
       <div class="bg-gray-50 p-4 rounded-lg mb-4 shadow-sm">
         <h3 class="text-xl font-semibold mb-2">🙋‍♀️ ברוכה הבאה, רייצ'ל!</h3>
-        <p>🔹 כאן תוכלי לראות מידע עדכני על <strong>יחידת הזהות הדיגיטלית (DIU)</strong> שלך והמצב הנוכחי של <strong>יתרת MDIC 💰</strong>.</p>
+        <p>🔹 כאן תוכלי לראות מידע עדכני על <strong>יחידת הזהות הדיגיטלית (DIU)</strong> שלך.</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- DIU PROFILE CARD -->
         <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-md">
           <h3 class="font-semibold text-lg mb-2">👤 הפרופיל שלי</h3>
@@ -41,58 +39,24 @@
           <p>🧠 ציון AI: <strong>85%</strong></p>
         </div>
 
-        <!-- MDIC BALANCE CARD -->
-        <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-md">
-          <h3 class="font-semibold text-lg mb-2">💰 יתרת MDIC</h3>
-          <p class="text-yellow-600 font-bold text-xl">200 MDIC</p>
-          <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all duration-300 hover:-translate-y-1">💎 קנה/תרוויח MDIC</button>
-        </div>
-
         <!-- CONNECTED PLATFORMS -->
         <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-md">
           <h3 class="font-semibold text-lg mb-2">🌍 פלטפורמות מחוברות</h3>
           <ul class="list-disc list-inside">
-            <li>✅ אמזון</li>
-            <li>✅ ספוטיפיי</li>
-            <li>⏳ עולם VR (בהמתנה)</li>
+            <li>✅ רשתות חברתיות</li>
+            <li>✅ אתרי קניות</li>
+            <li>✅ שירותי תוכן</li>
           </ul>
         </div>
 
-        <!-- QUICK RECOMMENDATIONS -->
+        <!-- PRIVACY SETTINGS -->
         <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-md">
-          <h3 class="font-semibold text-lg mb-2">⚡ המלצות מהירות</h3>
+          <h3 class="font-semibold text-lg mb-2">🔒 הגדרות פרטיות</h3>
           <ul class="list-disc list-inside">
-            <li>📖 מאמר: "10 היעדים האקולוגיים המובילים"</li>
-            <li>👜 מוצר: "תיק גב אקולוגי 🌿"</li>
-            <li>🎼 מוזיקה: "🎶 Lo-Fi לעבודה ממוקדת"</li>
+            <li>✅ אימות דו-שלבי</li>
+            <li>✅ הצפנת נתונים</li>
+            <li>✅ בקרת גישה</li>
           </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- AMAZON SECTION -->
-    <section id="amazon" class="bg-white p-6 mb-8 rounded-lg shadow-lg">
-      <h2 class="text-2xl text-blue-600 mb-4">🛍️ אינטגרציה עם אמזון</h2>
-      <p>🔹 רייצ'ל, מצאנו עבורך מוצרים **אקולוגיים** שמתאימים לפרופיל שלך!</p>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-        <!-- PRODUCT CARD -->
-        <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-md">
-          <h4 class="font-semibold mb-1">💦 בקבוק מים אקולוגי</h4>
-          <p>💵 $19.99 | או 🔷 5 MDIC</p>
-          <button class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">➕ הוסף לעגלה</button>
-        </div>
-
-        <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-md">
-          <h4 class="font-semibold mb-1">🎒 תיק קנבס טבעי</h4>
-          <p>💵 $12.99 | או 🔷 3 MDIC</p>
-          <button class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">➕ הוסף לעגלה</button>
-        </div>
-
-        <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-md">
-          <h4 class="font-semibold mb-1">🔋 מטען סולארי</h4>
-          <p>💵 $29.99 | או 🔷 7 MDIC</p>
-          <button class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">➕ הוסף לעגלה</button>
         </div>
       </div>
     </section>
