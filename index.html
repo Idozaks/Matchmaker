@@ -64,6 +64,145 @@
   </header>
 
   <main>
+    <!-- Slideshow Presentation -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">🎯 Mycelium Matchmaker Presentation</h2>
+      <div class="slideshow-container bg-white rounded-lg shadow-lg p-6 relative">
+        <!-- Slide 1 -->
+        <div class="slide fade">
+          <h3 class="text-xl font-bold text-blue-600 mb-4">🌟 Welcome to Mycelium Matchmaker</h3>
+          <p class="mb-4">Your Digital Identity Ecosystem</p>
+          <img src="images/matchmaker_slide_welcome.png" alt="Welcome to Matchmaker - Digital Identity Ecosystem" class="mx-auto rounded shadow-lg">
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide fade">
+          <h3 class="text-xl font-bold text-blue-600 mb-4">💡 The Problem</h3>
+          <ul class="list-disc list-inside mb-4">
+            <li>Fragmented digital identities across platforms</li>
+            <li>Limited control over personal data</li>
+            <li>Poor personalization experiences</li>
+          </ul>
+          <img src="images/matchmaker_slide_problem.png" alt="Digital Identity Fragmentation Problem" class="mx-auto rounded shadow-lg">
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide fade">
+          <h3 class="text-xl font-bold text-blue-600 mb-4">🎯 Our Solution</h3>
+          <ul class="list-disc list-inside mb-4">
+            <li>Unified Digital Identity Units (DIUs)</li>
+            <li>MDIC Token Economy</li>
+            <li>Cross-Platform Integration</li>
+          </ul>
+          <img src="images/matchmaker_slide_solution.png" alt="Matchmaker Unified Digital Identity Solution" class="mx-auto rounded shadow-lg">
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="prev-btn" onclick="changeSlide(-1)">❮</button>
+        <button class="next-btn" onclick="changeSlide(1)">❯</button>
+
+        <!-- Dots -->
+        <div class="dots-container text-center mt-4">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+
+      <!-- Add Slideshow Styles -->
+      <style>
+        .slideshow-container {
+          max-width: 800px;
+          margin: 0 auto;
+          overflow: hidden;
+        }
+
+        .slide {
+          display: none;
+          padding: 20px;
+          text-align: center;
+        }
+
+        .slide.active {
+          display: block;
+          animation: fadeEffect 1s ease-in-out;
+        }
+
+        @keyframes fadeEffect {
+          from { opacity: 0; transform: translateX(20px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+
+        .prev-btn, .next-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(0, 0, 0, 0.5);
+          color: white;
+          padding: 16px;
+          border: none;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .prev-btn:hover, .next-btn:hover {
+          background: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
+
+        .dot {
+          height: 12px;
+          width: 12px;
+          margin: 0 4px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        .dot.active, .dot:hover {
+          background-color: #3b82f6;
+        }
+      </style>
+
+      <!-- Add Slideshow Script -->
+      <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          const slides = document.getElementsByClassName("slide");
+          const dots = document.getElementsByClassName("dot");
+          
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            dots[i].classList.remove("active");
+          }
+          
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].classList.add("active");
+        }
+
+        // Auto advance slides every 5 seconds
+        setInterval(() => changeSlide(1), 5000);
+      </script>
+    </section>
+
     <h2>Available Pages</h2>
     <p>Below are links to all the related Matchmaker HTML files. Click any link to open it and explore.</p>
 
