@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Mycelium Matchmaker - Index</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Minimal styling (optional); replace or enhance with your own CSS or Tailwind link -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -56,213 +56,214 @@
     }
   </style>
 </head>
-<body>
+<body class="bg-gray-100">
 
-  <header>
-    <h1>Mycelium Matchmaker - Welcome</h1>
+  <header class="bg-blue-600 text-white p-4 text-center">
+    <h1 class="text-2xl font-bold">Mycelium Matchmaker - Welcome</h1>
     <p>Index page for quick navigation</p>
   </header>
 
-  <main>
-    <div class="flex justify-center my-8">
-      <a href="user-dashboard.html" class="flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-        <span class="text-2xl">📊</span>
-        <span class="text-lg font-semibold">User Dashboard - לוח מחוונים משתמשים</span>
-      </a>
-    </div>
-    <!-- Slideshow Presentation -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold mb-4">🎯 Mycelium Matchmaker Presentation</h2>
-      <div class="slideshow-container bg-white rounded-lg shadow-lg p-6 relative">
-        <!-- Slide 1 -->
-        <div class="slide fade">
-          <h3 class="text-xl font-bold text-blue-600 mb-4">🌟 Welcome to Mycelium Matchmaker</h3>
-          <p class="mb-4">Your Digital Identity Ecosystem</p>
-          <div class="h-[20px] bg-gray-100 rounded text-gray-500 text-sm flex items-center justify-center">Welcome Image</div>
-        </div>
+  <main class="max-w-4xl mx-auto p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold">Available Pages</h2>
+        <p>Below are links to all the related Matchmaker HTML files. Click any link to open it and explore.</p>
+        <ul class="link-list">
+          <li>
+            <a href="NEWdemo.html">🚀 דמו חדש - Digital Persona Maker (DPM)</a>
+            <p>גרסה משופרת של הדמו עם ממשק משתמש מודרני וחוויית משתמש משופרת</p>
+          </li>
+          <li>
+            <a href="demo.html">🎯 דמו מקורי - Digital Persona Maker (DPM)</a>
+            <p>הדמו המקורי של המערכת</p>
+          </li>
+          <!-- 1. Rachel's Cross-Platform UI (English) -->
+          <li>
+            <h3>👩‍💻 Rachel's Cross-Platform UI (English) 🇺🇸</h3>
+            <p>🌟 Demonstrates Rachel's journey across multiple platforms in English—covering AI-driven personalization, MDIC usage, and more.</p>
+            <a href="rachel-cross-platform-ui.html" target="_blank">Open rachel-cross-platform-ui.html</a>
+          </li>
 
-        <!-- Slide 2 -->
-        <div class="slide fade">
-          <h3 class="text-xl font-bold text-blue-600 mb-4">💡 The Problem</h3>
-          <ul class="list-disc list-inside mb-4">
-            <li>Fragmented digital identities across platforms</li>
-            <li>Limited control over personal data</li>
-            <li>Poor personalization experiences</li>
-          </ul>
-          <div class="h-[20px] bg-gray-100 rounded text-gray-500 text-sm flex items-center justify-center">Problem Image</div>
-        </div>
+          <!-- 2. Rachel (Hebrew) -->
+          <li>
+            <h3>👩‍💻 Rachel's Journey (Hebrew) 🇮🇱</h3>
+            <p>✨ A Hebrew version of Rachel's cross-platform experience, showcasing how the UI and text appear for Hebrew-speaking users.</p>
+            <a href="rachel_heb.html" target="_blank">Open rachel-heb.html</a>
+          </li>
 
-        <!-- Slide 3 -->
-        <div class="slide fade">
-          <h3 class="text-xl font-bold text-blue-600 mb-4">🎯 Our Solution</h3>
-          <ul class="list-disc list-inside mb-4">
-            <li>Unified Digital Identity Units (DIUs)</li>
-            <li>MDIC Token Economy</li>
-            <li>Cross-Platform Integration</li>
-          </ul>
-          <div class="h-[20px] bg-gray-100 rounded text-gray-500 text-sm flex items-center justify-center">Solution Image</div>
-        </div>
+          <!-- 3. Onboarding Flow -->
+          <li>
+            <h3>🚀 Onboarding Flow (English) 📝</h3>
+            <p>🎯 A multi-step wizard (in English) that guides new users through creating an account, selecting interests, and setting privacy preferences.</p>
+            <a href="onboarding.html" target="_blank">Open onboarding.html</a>
+          </li>
 
-        <!-- Navigation Buttons -->
-        <button class="prev-btn" onclick="changeSlide(-1)">❮</button>
-        <button class="next-btn" onclick="changeSlide(1)">❯</button>
+          <!-- 4. Hebrew Matchmaker -->
+          <li>
+            <h3>💝 Hebrew Matchmaker (Basic HTML) 🇮🇱</h3>
+            <p>💫 A localized version of Matchmaker's primary layout and content in Hebrew, showcasing main features and text flow.</p>
+            <a href="hebrew-matchmaker.html" target="_blank">Open hebrew-matchmaker.html</a>
+          </li>
 
-        <!-- Dots -->
-        <div class="dots-container text-center mt-4">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
+          <!-- 5. Hebrew Matchmaker (Tailwind) -->
+          <li>
+            <h3>💝 Hebrew Matchmaker (Tailwind CSS) ⚡</h3>
+            <p>🎨 This file is similar in functionality to <strong>hebrew-matchmaker.html</strong> but uses Tailwind CSS for styling and layout.</p>
+            <a href="hebrew-matchmaker-tailwind.html" target="_blank">Open hebrew-matchmaker-tailwind.html</a>
+          </li>
+
+        </ul>
+        <a href="#" class="text-blue-500 hover:underline">Learn more</a>
       </div>
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold">Slideshow Presentation</h2>
+        <p>🎯 Mycelium Matchmaker Presentation</p>
+        <div class="slideshow-container bg-white rounded-lg shadow-lg p-6 relative">
+          <!-- Slide 1 -->
+          <div class="slide fade">
+            <h3 class="text-xl font-bold text-blue-600 mb-4">🌟 Welcome to Mycelium Matchmaker</h3>
+            <p class="mb-4">Your Digital Identity Ecosystem</p>
+            <div class="h-[20px] bg-gray-100 rounded text-gray-500 text-sm flex items-center justify-center">Welcome Image</div>
+          </div>
 
-      <!-- Add Slideshow Styles -->
-      <style>
-        .slideshow-container {
-          max-width: 800px;
-          margin: 0 auto;
-          overflow: hidden;
-        }
+          <!-- Slide 2 -->
+          <div class="slide fade">
+            <h3 class="text-xl font-bold text-blue-600 mb-4">💡 The Problem</h3>
+            <ul class="list-disc list-inside mb-4">
+              <li>Fragmented digital identities across platforms</li>
+              <li>Limited control over personal data</li>
+              <li>Poor personalization experiences</li>
+            </ul>
+            <div class="h-[20px] bg-gray-100 rounded text-gray-500 text-sm flex items-center justify-center">Problem Image</div>
+          </div>
 
-        .slide {
-          display: none;
-          padding: 20px;
-          text-align: center;
-        }
+          <!-- Slide 3 -->
+          <div class="slide fade">
+            <h3 class="text-xl font-bold text-blue-600 mb-4">🎯 Our Solution</h3>
+            <ul class="list-disc list-inside mb-4">
+              <li>Unified Digital Identity Units (DIUs)</li>
+              <li>MDIC Token Economy</li>
+              <li>Cross-Platform Integration</li>
+            </ul>
+            <div class="h-[20px] bg-gray-100 rounded text-gray-500 text-sm flex items-center justify-center">Solution Image</div>
+          </div>
 
-        .slide.active {
-          display: block;
-          animation: fadeEffect 1s ease-in-out;
-        }
+          <!-- Navigation Buttons -->
+          <button class="prev-btn" onclick="changeSlide(-1)">❮</button>
+          <button class="next-btn" onclick="changeSlide(1)">❯</button>
 
-        @keyframes fadeEffect {
-          from { opacity: 0; transform: translateX(20px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
+          <!-- Dots -->
+          <div class="dots-container text-center mt-4">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+        </div>
 
-        .prev-btn, .next-btn {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          background: rgba(0, 0, 0, 0.5);
-          color: white;
-          padding: 16px;
-          border: none;
-          border-radius: 50%;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-
-        .prev-btn:hover, .next-btn:hover {
-          background: rgba(0, 0, 0, 0.8);
-        }
-
-        .prev-btn { left: 10px; }
-        .next-btn { right: 10px; }
-
-        .dot {
-          height: 12px;
-          width: 12px;
-          margin: 0 4px;
-          background-color: #bbb;
-          border-radius: 50%;
-          display: inline-block;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-        }
-
-        .dot.active, .dot:hover {
-          background-color: #3b82f6;
-        }
-      </style>
-
-      <!-- Add Slideshow Script -->
-      <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function changeSlide(n) {
-          showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-          showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-          const slides = document.getElementsByClassName("slide");
-          const dots = document.getElementsByClassName("dot");
-          
-          if (n > slides.length) {slideIndex = 1}
-          if (n < 1) {slideIndex = slides.length}
-          
-          for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-            dots[i].classList.remove("active");
+        <!-- Add Slideshow Styles -->
+        <style>
+          .slideshow-container {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
           }
-          
-          slides[slideIndex-1].style.display = "block";
-          dots[slideIndex-1].classList.add("active");
-        }
 
-        // Auto advance slides every 5 seconds
-        setInterval(() => changeSlide(1), 5000);
-      </script>
-    </section>
+          .slide {
+            display: none;
+            padding: 20px;
+            text-align: center;
+          }
 
-    <h2>Available Pages</h2>
-    <p>Below are links to all the related Matchmaker HTML files. Click any link to open it and explore.</p>
+          .slide.active {
+            display: block;
+            animation: fadeEffect 1s ease-in-out;
+          }
 
-    <ul class="link-list">
-      <li>
-        <a href="NEWdemo.html">🚀 דמו חדש - Digital Persona Maker (DPM)</a>
-        <p>גרסה משופרת של הדמו עם ממשק משתמש מודרני וחוויית משתמש משופרת</p>
-      </li>
-      <li>
-        <a href="demo.html">🎯 דמו מקורי - Digital Persona Maker (DPM)</a>
-        <p>הדמו המקורי של המערכת</p>
-      </li>
-      <!-- 1. Rachel's Cross-Platform UI (English) -->
-      <li>
-        <h3>👩‍💻 Rachel's Cross-Platform UI (English) 🇺🇸</h3>
-        <p>🌟 Demonstrates Rachel's journey across multiple platforms in English—covering AI-driven personalization, MDIC usage, and more.</p>
-        <a href="rachel-cross-platform-ui.html" target="_blank">Open rachel-cross-platform-ui.html</a>
-      </li>
+          @keyframes fadeEffect {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+          }
 
-      <!-- 2. Rachel (Hebrew) -->
-      <li>
-        <h3>👩‍💻 Rachel's Journey (Hebrew) 🇮🇱</h3>
-        <p>✨ A Hebrew version of Rachel's cross-platform experience, showcasing how the UI and text appear for Hebrew-speaking users.</p>
-        <a href="rachel_heb.html" target="_blank">Open rachel-heb.html</a>
-      </li>
+          .prev-btn, .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
 
-      <!-- 3. Onboarding Flow -->
-      <li>
-        <h3>🚀 Onboarding Flow (English) 📝</h3>
-        <p>🎯 A multi-step wizard (in English) that guides new users through creating an account, selecting interests, and setting privacy preferences.</p>
-        <a href="onboarding.html" target="_blank">Open onboarding.html</a>
-      </li>
+          .prev-btn:hover, .next-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+          }
 
-      <!-- 4. Hebrew Matchmaker -->
-      <li>
-        <h3>💝 Hebrew Matchmaker (Basic HTML) 🇮🇱</h3>
-        <p>💫 A localized version of Matchmaker's primary layout and content in Hebrew, showcasing main features and text flow.</p>
-        <a href="hebrew-matchmaker.html" target="_blank">Open hebrew-matchmaker.html</a>
-      </li>
+          .prev-btn { left: 10px; }
+          .next-btn { right: 10px; }
 
-      <!-- 5. Hebrew Matchmaker (Tailwind) -->
-      <li>
-        <h3>💝 Hebrew Matchmaker (Tailwind CSS) ⚡</h3>
-        <p>🎨 This file is similar in functionality to <strong>hebrew-matchmaker.html</strong> but uses Tailwind CSS for styling and layout.</p>
-        <a href="hebrew-matchmaker-tailwind.html" target="_blank">Open hebrew-matchmaker-tailwind.html</a>
-      </li>
+          .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+          }
 
-    </ul>
-    <hr />
-    <p>Feel free to modify this index page to suit your design preferences or add more contextual information.</p>
+          .dot.active, .dot:hover {
+            background-color: #3b82f6;
+          }
+        </style>
+
+        <!-- Add Slideshow Script -->
+        <script>
+          let slideIndex = 1;
+          showSlides(slideIndex);
+
+          function changeSlide(n) {
+            showSlides(slideIndex += n);
+          }
+
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+
+          function showSlides(n) {
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (let i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+              dots[i].classList.remove("active");
+            }
+            
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].classList.add("active");
+          }
+
+          // Auto advance slides every 5 seconds
+          setInterval(() => changeSlide(1), 5000);
+        </script>
+        <a href="#" class="text-blue-500 hover:underline">Learn more</a>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold">User Dashboard</h2>
+        <p>📊 User Dashboard - לוח מחוונים משתמשים</p>
+        <a href="user-dashboard.html" class="text-blue-500 hover:underline">Open User Dashboard</a>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Mycelium Matchmaker. All rights reserved.</p>
+  <footer class="bg-gray-800 text-white py-4 text-center">
+    <p>&copy; 2025 Mycelium Matchmaker</p>
   </footer>
 
 </body>
