@@ -65,6 +65,7 @@
         url: "users/users.json",
         dataType: "json",
         success: function (usersData) {
+          console.log("Loaded user data:", usersData[0]); // Log first user to check data structure
           var table = $('#usersTable').DataTable({
             data: usersData,
             columns: [
@@ -77,9 +78,9 @@
               { data: "Total_Spent" },
               { data: "Purchase_Frequency" },
               { data: "Engagement_Score" },
-              { data: "Pet_Preference" },
-              { data: "Dietary_Preference" },
-              { data: "Streaming_Service" }
+              { data: "Pet_Preference", defaultContent: "" },
+              { data: "Dietary_Preference", defaultContent: "" },
+              { data: "Streaming_Service", defaultContent: "" }
             ],
             paging: true,
             searching: true,
@@ -95,7 +96,10 @@
             }
           });
         },
-        error: function () {
+        error: function (xhr, status, error) {
+          console.error("Error loading data:", error);
+          console.error("Status:", status);
+          console.error("Response:", xhr.responseText);
           $("#error-message").removeClass("hidden");
         }
       });
