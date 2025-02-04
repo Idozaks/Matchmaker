@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>העשרה חכמה - AI Assistant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-purple-50 to-blue-100 min-h-screen">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-purple-600 to-blue-600 text-white text-center p-8 shadow-lg">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-6xl mb-4 animate-float">🤖</div>
+      <h1 class="text-4xl font-bold mb-4">העשרה חכמה באמצעות AI</h1>
+      <p class="text-xl opacity-90">שדרוג הפרופיל הדיגיטלי שלך באמצעות בינה מלאכותית מתקדמת</p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto p-6">
+    <!-- AI Process Steps -->
+    <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+      <h2 class="text-2xl font-bold text-center text-purple-600 mb-8">תהליך ההעשרה החכם 🔄</h2>
+      
+      <div class="space-y-8">
+        <!-- Step 1 -->
+        <div class="flex items-start space-x-6 space-x-reverse">
+          <div class="bg-purple-100 rounded-full p-4 flex-shrink-0">
+            <div class="text-2xl">1️⃣</div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">ניתוח פרופיל ראשוני</h3>
+            <p class="text-gray-600">AI מנתח את המידע הקיים בפרופיל שלך ומזהה הזדמנויות להעשרה</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex items-start space-x-6 space-x-reverse">
+          <div class="bg-purple-100 rounded-full p-4 flex-shrink-0">
+            <div class="text-2xl">2️⃣</div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">הצעות מותאמות אישית</h3>
+            <p class="text-gray-600">המערכת מציעה תוספות והרחבות המתאימות בדיוק לפרופיל שלך</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex items-start space-x-6 space-x-reverse">
+          <div class="bg-purple-100 rounded-full p-4 flex-shrink-0">
+            <div class="text-2xl">3️⃣</div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">שליטה מלאה בידיים שלך</h3>
+            <p class="text-gray-600">אתה מחליט אילו המלצות לאמץ ואילו לדחות</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Features -->
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <!-- Smart Suggestions -->
+      <div class="bg-white rounded-xl shadow-lg p-6">
+        <div class="text-3xl mb-4">💡</div>
+        <h3 class="text-xl font-bold text-purple-600 mb-3">המלצות חכמות</h3>
+        <p class="text-gray-600">AI מזהה תחומי עניין נוספים שעשויים להתאים לך</p>
+        <button class="mt-4 w-full bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
+          קבל המלצות
+        </button>
+      </div>
+
+      <!-- Profile Analysis -->
+      <div class="bg-white rounded-xl shadow-lg p-6">
+        <div class="text-3xl mb-4">📊</div>
+        <h3 class="text-xl font-bold text-purple-600 mb-3">ניתוח פרופיל</h3>
+        <p class="text-gray-600">קבל תובנות מעמיקות על הפרופיל שלך</p>
+        <button class="mt-4 w-full bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
+          נתח פרופיל
+        </button>
+      </div>
+    </div>
+
+    <!-- Interactive Demo -->
+    <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+      <h2 class="text-2xl font-bold text-center text-purple-600 mb-6">נסה עכשיו! 🚀</h2>
+      <div class="max-w-xl mx-auto">
+        <div class="bg-gray-50 rounded-lg p-6 mb-6">
+          <h3 class="font-bold mb-4">הכנס תחום עניין ראשוני:</h3>
+          <input type="text" class="w-full p-3 border rounded-lg mb-4" placeholder="לדוגמה: טכנולוגיה, ספורט, אמנות...">
+          <button class="w-full bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition">
+            קבל המלצות AI
+          </button>
+        </div>
+        <div id="results" class="hidden">
+          <!-- Results will be shown here via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+      <h2 class="text-2xl font-bold text-center text-purple-600 mb-8">יתרונות ההעשרה החכמה 🌟</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="flex items-start space-x-4 space-x-reverse">
+          <div class="text-2xl">🎯</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">דיוק מירבי</h3>
+            <p class="text-gray-600">המלצות מדויקות המבוססות על ניתוח מעמיק</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4 space-x-reverse">
+          <div class="text-2xl">⚡</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">חיסכון בזמן</h3>
+            <p class="text-gray-600">העשרת פרופיל מהירה ויעילה</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4 space-x-reverse">
+          <div class="text-2xl">🔒</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">פרטיות מובטחת</h3>
+            <p class="text-gray-600">כל התהליך מתבצע תוך שמירה על פרטיותך</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4 space-x-reverse">
+          <div class="text-2xl">🔄</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">למידה מתמדת</h3>
+            <p class="text-gray-600">המערכת משתפרת ומתעדכנת באופן קבוע</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white mt-12 py-8 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="mb-2">Digital Persona Maker (DPM) © 2025</p>
+      <p class="text-gray-400">AI Enrichment Module</p>
+      <a href="NEWdemo.html" class="text-purple-400 hover:text-purple-300 mt-4 inline-block">← חזרה לדף הראשי</a>
+    </div>
+  </footer>
+
+  <script>
+    // Simple demo functionality
+    document.querySelector('button').addEventListener('click', function() {
+      const input = document.querySelector('input').value;
+      if (input) {
+        const results = document.getElementById('results');
+        results.innerHTML = `
+          <div class="bg-purple-50 rounded-lg p-6">
+            <h3 class="font-bold mb-4">המלצות AI עבור: ${input}</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center space-x-2 space-x-reverse">
+                <span class="text-purple-600">✓</span>
+                <span>תחום משיק: ${input} מתקדם</span>
+              </li>
+              <li class="flex items-center space-x-2 space-x-reverse">
+                <span class="text-purple-600">✓</span>
+                <span>קהילות ${input} מובילות</span>
+              </li>
+              <li class="flex items-center space-x-2 space-x-reverse">
+                <span class="text-purple-600">✓</span>
+                <span>אירועי ${input} קרובים</span>
+              </li>
+            </ul>
+          </div>
+        `;
+        results.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
