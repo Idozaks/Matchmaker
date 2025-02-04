@@ -35,10 +35,7 @@
   <main class="max-w-7xl mx-auto p-6">
     <section class="bg-white rounded-xl shadow-lg p-8">
       <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">רשימת משתמשים</h2>
-      <div class="mb-4 flex items-center justify-center gap-2">
-        <input type="checkbox" id="emojiToggle" checked class="form-checkbox h-5 w-5 text-blue-600">
-        <label for="emojiToggle" class="text-lg">הצג אימוג'ים</label>
-      </div>
+      
       <div class="overflow-x-auto">
         <table id="usersTable" class="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
           <thead class="bg-blue-500 text-white">
@@ -71,104 +68,52 @@
   </main>
 
   <footer class="bg-gray-800 text-white mt-12 py-6 px-6 text-center">
-    <p> 2025 לוח מחוונים AI</p>
+    <p>© 2025 לוח מחוונים AI</p>
   </footer>
 
   <script>
-    let emojiMapping = {};
-    let dataTable;
-    
-    // Load emoji mappings from the external JSON file
-    $.getJSON('emoji_allocation.json', function(data) {
-      emojiMapping = data;
-    });
-
-    function updateEmojis() {
-      let showEmojis = $('#emojiToggle').is(':checked');
-      $('#usersTable tbody tr').each(function() {
-        // Country column at index 3
-        let countryCell = $(this).find('td').eq(3);
-        let countryText = countryCell.text().trim();
-        if (showEmojis && emojiMapping.Country) {
-          Object.keys(emojiMapping.Country).forEach(function(key) {
-            if (countryText.toLowerCase().includes(key.toLowerCase())) {
-              if (countryText.indexOf(emojiMapping.Country[key]) === -1) {
-                countryCell.html(countryText + ' ' + emojiMapping.Country[key]);
+    $(document).ready(function () {
+      $.ajax({
+        url: "users/users.json", // Path to JSON file
+        dataType: "json",
+        success: function (usersData) {
+          var table = $('#usersTable').DataTable({
+            data: usersData,
+            columns: [
+              { data: "User_ID" },
+              { data: "Age" },
+              { data: "Gender" },
+              { data: "Country" },
+              { data: "Subscription_Type" },
+              { data: "Last_Login" },
+              { data: "Total_Spent" },
+              { data: "Purchase_Frequency" },
+              { data: "Engagement_Score" },
+              { data: "Pet_Preference" },
+              { data: "Dietary_Preference" },
+              { data: "Streaming_Service" }
+            ],
+            paging: true,
+            searching: true,
+            responsive: true,
+            language: {
+              search: "🔍 חיפוש:",
+              lengthMenu: "הצג _MENU_ רשומות",
+              info: "מציג _START_ עד _END_ מתוך _TOTAL_",
+              paginate: {
+                next: "הבא ➡",
+                previous: "⬅ קודם"
               }
             }
           });
-        } else {
-          if (emojiMapping.Country) {
-            Object.values(emojiMapping.Country).forEach(function(emoji) {
-              countryText = countryText.replace(emoji, '').trim();
-            });
-            countryCell.html(countryText);
-          }
-        }
-
-        // Subscription_Type column at index 4
-        let subsCell = $(this).find('td').eq(4);
-        let subsText = subsCell.text().trim();
-        if (showEmojis && emojiMapping.Subscription_Type) {
-          Object.keys(emojiMapping.Subscription_Type).forEach(function(key) {
-            if (subsText.toLowerCase().includes(key.toLowerCase())) {
-              if (subsText.indexOf(emojiMapping.Subscription_Type[key]) === -1) {
-                subsCell.html(subsText + ' ' + emojiMapping.Subscription_Type[key]);
-              }
-            }
-          });
-        } else {
-          if (emojiMapping.Subscription_Type) {
-            Object.values(emojiMapping.Subscription_Type).forEach(function(emoji) {
-              subsText = subsText.replace(emoji, '').trim();
-            });
-            subsCell.html(subsText);
-          }
+        },
+        error: function () {
+          $("#error-message").removeClass("hidden");
         }
       });
-    }
-
-    $('#emojiToggle').on('change', function() {
-      updateEmojis();
-    });
-
-    // Modify the success callback to initialize DataTable and set up emoji updates
-    function success(usersData) {
-      dataTable = $('#usersTable').DataTable({
-        data: usersData,
-        columns: [
-          { data: 'User_ID' },
-          { data: 'Age' },
-          { data: 'Gender' },
-          { data: 'Country' },
-          { data: 'Subscription_Type' },
-          { 
-            data: 'Last_Login',
-            render: function(data) {
-              return new Date(data).toLocaleDateString();
-            }
-          },
-          { data: 'Total_Spent' },
-          { data: 'Purchase_Frequency' },
-          { data: 'Engagement_Score' }
-        ],
-        drawCallback: function() {
-          updateEmojis();
-        }
-      });
-    }
-
-    function error() {
-      console.error('Error loading users data');
-    }
-
-    // Load users data
-    $.ajax({
-      url: 'users/users.json',
-      success: success,
-      error: error
     });
   </script>
 
 </body>
 </html>
+    
