@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>לוח מחוונים - משתמשים</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/dataTables.tailwindcss.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.tailwindcss.min.css">
+
+  <style>
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-200 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center p-8 shadow-lg">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-6xl mb-4 animate-float">📊</div>
+      <h1 class="text-4xl font-bold mb-4">לוח מחוונים - משתמשים</h1>
+      <p class="text-xl opacity-90">תצוגת מידע אינטראקטיבית של המשתמשים</p>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto p-6">
+    <section class="bg-white rounded-xl shadow-lg p-8">
+      <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">רשימת משתמשים</h2>
+      
+      <div class="overflow-x-auto">
+        <table id="usersTable" class="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
+          <thead class="bg-blue-500 text-white">
+            <tr>
+              <th class="py-3 px-4 border">ID</th>
+              <th class="py-3 px-4 border">גיל</th>
+              <th class="py-3 px-4 border">מגדר</th>
+              <th class="py-3 px-4 border">מדינה</th>
+              <th class="py-3 px-4 border">סוג מנוי</th>
+              <th class="py-3 px-4 border">תאריך התחברות אחרון</th>
+              <th class="py-3 px-4 border">סכום רכישות</th>
+              <th class="py-3 px-4 border">תדירות רכישה</th>
+              <th class="py-3 px-4 border">מדד מעורבות</th>
+              <th class="py-3 px-4 border">חיות מחמד</th>
+              <th class="py-3 px-4 border">סוג דיאטה</th>
+              <th class="py-3 px-4 border">שירות סטרימינג</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Data will be inserted dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="error-message" class="hidden text-red-600 text-center mt-4 font-bold">
+        ⚠️ שגיאה בטעינת הנתונים. אנא בדוק את users.json
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-white mt-12 py-6 px-6 text-center">
+    <p>© 2025 לוח מחוונים AI</p>
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: "users/users.json", // Path to JSON file
+        dataType: "json",
+        success: function (usersData) {
+          var table = $('#usersTable').DataTable({
+            data: usersData,
+            columns: [
+              { data: "User_ID" },
+              { data: "Age" },
+              { data: "Gender" },
+              { data: "Country" },
+              { data: "Subscription_Type" },
+              { data: "Last_Login" },
+              { data: "Total_Spent" },
+              { data: "Purchase_Frequency" },
+              { data: "Engagement_Score" },
+              { data: "Pet_Preference" },
+              { data: "Dietary_Preference" },
+              { data: "Streaming_Service" }
+            ],
+            paging: true,
+            searching: true,
+            responsive: true,
+            language: {
+              search: "🔍 חיפוש:",
+              lengthMenu: "הצג _MENU_ רשומות",
+              info: "מציג _START_ עד _END_ מתוך _TOTAL_",
+              paginate: {
+                next: "הבא ➡",
+                previous: "⬅ קודם"
+              }
+            }
+          });
+        },
+        error: function () {
+          $("#error-message").removeClass("hidden");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+    
