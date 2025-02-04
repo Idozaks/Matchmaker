@@ -9,24 +9,12 @@
   <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.11.5/js/dataTables.tailwindcss.min.js"></script>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.tailwindcss.min.css">
-
-  <style>
-    .animate-float {
-      animation: float 3s ease-in-out infinite;
-    }
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-    }
-  </style>
 </head>
 <body class="bg-gradient-to-br from-gray-50 to-gray-200 min-h-screen">
 
   <!-- Header -->
   <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center p-8 shadow-lg">
     <div class="max-w-4xl mx-auto">
-      <div class="text-6xl mb-4 animate-float">📊</div>
       <h1 class="text-4xl font-bold mb-4">לוח מחוונים - משתמשים</h1>
       <p class="text-xl opacity-90">תצוגת מידע אינטראקטיבית של המשתמשים</p>
     </div>
@@ -61,20 +49,20 @@
       </div>
 
       <div id="error-message" class="hidden text-red-600 text-center mt-4 font-bold">
-        ⚠️ שגיאה בטעינת הנתונים. אנא בדוק את users.json
+        שגיאה בטעינת הנתונים. אנא בדוק את users.json
       </div>
 
     </section>
   </main>
 
   <footer class="bg-gray-800 text-white mt-12 py-6 px-6 text-center">
-    <p>© 2025 לוח מחוונים AI</p>
+    <p>2025 לוח מחוונים AI</p>
   </footer>
 
   <script>
     $(document).ready(function () {
       $.ajax({
-        url: "users/users.json", // Path to JSON file
+        url: "users/users.json",
         dataType: "json",
         success: function (usersData) {
           var table = $('#usersTable').DataTable({
@@ -97,12 +85,12 @@
             searching: true,
             responsive: true,
             language: {
-              search: "🔍 חיפוש:",
+              search: "חיפוש:",
               lengthMenu: "הצג _MENU_ רשומות",
               info: "מציג _START_ עד _END_ מתוך _TOTAL_",
               paginate: {
-                next: "הבא ➡",
-                previous: "⬅ קודם"
+                next: "הבא",
+                previous: "קודם"
               }
             }
           });
@@ -116,4 +104,3 @@
 
 </body>
 </html>
-    
