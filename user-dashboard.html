@@ -35,7 +35,10 @@
   <main class="max-w-7xl mx-auto p-6">
     <section class="bg-white rounded-xl shadow-lg p-8">
       <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">רשימת משתמשים</h2>
-      
+      <div class="mb-4 flex items-center justify-center gap-2">
+        <input type="checkbox" id="emojiToggle" checked class="form-checkbox h-5 w-5 text-blue-600">
+        <label for="emojiToggle" class="text-lg">הצג אימוג'ים</label>
+      </div>
       <div class="overflow-x-auto">
         <table id="usersTable" class="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
           <thead class="bg-blue-500 text-white">
@@ -114,6 +117,64 @@
     });
   </script>
 
+  <script>
+    let emojiMapping = {};
+  
+    // Load emoji mappings from the external JSON file
+    $.getJSON('emoji_allocation.json', function(data) {
+      emojiMapping = data;
+      updateEmojis();
+    });
+
+    function updateEmojis() {
+      let showEmojis = $('#emojiToggle').is(':checked');
+      $('#usersTable tbody tr').each(function() {
+        // Country column at index 3
+        let countryCell = $(this).find('td').eq(3);
+        let countryText = countryCell.text().trim();
+        if (showEmojis) {
+          Object.keys(emojiMapping.Country).forEach(function(key) {
+            if (countryText.toLowerCase().includes(key.toLowerCase())) {
+              if (countryText.indexOf(emojiMapping.Country[key]) === -1) {
+                countryCell.html(countryText + ' ' + emojiMapping.Country[key]);
+              }
+            }
+          });
+        } else {
+          Object.values(emojiMapping.Country).forEach(function(emoji) {
+            countryText = countryText.replace(emoji, '').trim();
+          });
+          countryCell.html(countryText);
+        }
+
+        // Subscription_Type column at index 4
+        let subsCell = $(this).find('td').eq(4);
+        let subsText = subsCell.text().trim();
+        if (showEmojis) {
+          Object.keys(emojiMapping.Subscription_Type).forEach(function(key) {
+            if (subsText.toLowerCase().includes(key.toLowerCase())) {
+              if (subsText.indexOf(emojiMapping.Subscription_Type[key]) === -1) {
+                subsCell.html(subsText + ' ' + emojiMapping.Subscription_Type[key]);
+              }
+            }
+          });
+        } else {
+          Object.values(emojiMapping.Subscription_Type).forEach(function(emoji) {
+            subsText = subsText.replace(emoji, '').trim();
+          });
+          subsCell.html(subsText);
+        }
+      });
+    }
+
+    $('#emojiToggle').on('change', function() {
+      updateEmojis();
+    });
+
+    $(document).ready(function() {
+      updateEmojis();
+    });
+  </script>
+
 </body>
 </html>
-    
