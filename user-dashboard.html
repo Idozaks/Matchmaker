@@ -71,59 +71,16 @@
   </main>
 
   <footer class="bg-gray-800 text-white mt-12 py-6 px-6 text-center">
-    <p>© 2025 לוח מחוונים AI</p>
+    <p> 2025 לוח מחוונים AI</p>
   </footer>
 
   <script>
-    $(document).ready(function () {
-      $.ajax({
-        url: "users/users.json", // Path to JSON file
-        dataType: "json",
-        success: function (usersData) {
-          var table = $('#usersTable').DataTable({
-            data: usersData,
-            columns: [
-              { data: "User_ID" },
-              { data: "Age" },
-              { data: "Gender" },
-              { data: "Country" },
-              { data: "Subscription_Type" },
-              { data: "Last_Login" },
-              { data: "Total_Spent" },
-              { data: "Purchase_Frequency" },
-              { data: "Engagement_Score" },
-              { data: "Pet_Preference" },
-              { data: "Dietary_Preference" },
-              { data: "Streaming_Service" }
-            ],
-            paging: true,
-            searching: true,
-            responsive: true,
-            language: {
-              search: "🔍 חיפוש:",
-              lengthMenu: "הצג _MENU_ רשומות",
-              info: "מציג _START_ עד _END_ מתוך _TOTAL_",
-              paginate: {
-                next: "הבא ➡",
-                previous: "⬅ קודם"
-              }
-            }
-          });
-        },
-        error: function () {
-          $("#error-message").removeClass("hidden");
-        }
-      });
-    });
-  </script>
-
-  <script>
     let emojiMapping = {};
-  
+    let dataTable;
+    
     // Load emoji mappings from the external JSON file
     $.getJSON('emoji_allocation.json', function(data) {
       emojiMapping = data;
-      updateEmojis();
     });
 
     function updateEmojis() {
@@ -132,7 +89,7 @@
         // Country column at index 3
         let countryCell = $(this).find('td').eq(3);
         let countryText = countryCell.text().trim();
-        if (showEmojis) {
+        if (showEmojis && emojiMapping.Country) {
           Object.keys(emojiMapping.Country).forEach(function(key) {
             if (countryText.toLowerCase().includes(key.toLowerCase())) {
               if (countryText.indexOf(emojiMapping.Country[key]) === -1) {
@@ -141,16 +98,18 @@
             }
           });
         } else {
-          Object.values(emojiMapping.Country).forEach(function(emoji) {
-            countryText = countryText.replace(emoji, '').trim();
-          });
-          countryCell.html(countryText);
+          if (emojiMapping.Country) {
+            Object.values(emojiMapping.Country).forEach(function(emoji) {
+              countryText = countryText.replace(emoji, '').trim();
+            });
+            countryCell.html(countryText);
+          }
         }
 
         // Subscription_Type column at index 4
         let subsCell = $(this).find('td').eq(4);
         let subsText = subsCell.text().trim();
-        if (showEmojis) {
+        if (showEmojis && emojiMapping.Subscription_Type) {
           Object.keys(emojiMapping.Subscription_Type).forEach(function(key) {
             if (subsText.toLowerCase().includes(key.toLowerCase())) {
               if (subsText.indexOf(emojiMapping.Subscription_Type[key]) === -1) {
@@ -159,10 +118,12 @@
             }
           });
         } else {
-          Object.values(emojiMapping.Subscription_Type).forEach(function(emoji) {
-            subsText = subsText.replace(emoji, '').trim();
-          });
-          subsCell.html(subsText);
+          if (emojiMapping.Subscription_Type) {
+            Object.values(emojiMapping.Subscription_Type).forEach(function(emoji) {
+              subsText = subsText.replace(emoji, '').trim();
+            });
+            subsCell.html(subsText);
+          }
         }
       });
     }
@@ -171,8 +132,41 @@
       updateEmojis();
     });
 
-    $(document).ready(function() {
-      updateEmojis();
+    // Modify the success callback to initialize DataTable and set up emoji updates
+    function success(usersData) {
+      dataTable = $('#usersTable').DataTable({
+        data: usersData,
+        columns: [
+          { data: 'User_ID' },
+          { data: 'Age' },
+          { data: 'Gender' },
+          { data: 'Country' },
+          { data: 'Subscription_Type' },
+          { 
+            data: 'Last_Login',
+            render: function(data) {
+              return new Date(data).toLocaleDateString();
+            }
+          },
+          { data: 'Total_Spent' },
+          { data: 'Purchase_Frequency' },
+          { data: 'Engagement_Score' }
+        ],
+        drawCallback: function() {
+          updateEmojis();
+        }
+      });
+    }
+
+    function error() {
+      console.error('Error loading users data');
+    }
+
+    // Load users data
+    $.ajax({
+      url: 'users/users.json',
+      success: success,
+      error: error
     });
   </script>
 
